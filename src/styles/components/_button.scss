@@ -1,0 +1,32 @@
+.button {
+  background: $blue;
+  border: none;
+  color: white;
+  display: inline-block;
+  font-size: $font-size-large;
+  font-weight: 300;
+  line-height: 1;
+  padding: $s-size;
+  text-decoration: none;
+}
+
+.button--link {
+  background: none;
+}
+
+.button--secondary {
+  background: #888;
+}
+
+.addToCart, .buyNow, .rateProduct, .continueShopping, .placeOrder {
+  padding: 1.5rem 4rem;
+  border-radius: 0;
+  width: 215px;
+  height: 60px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.rateProduct, .continueShopping, .placeOrder {
+  width: 274px;
+}
