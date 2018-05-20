@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ImageGallery from 'react-image-gallery';
 import { MdLocalGroceryStore, MdEuroSymbol } from 'react-icons/lib/md';
-import { Col, Button } from 'reactstrap';
+import { Col, Button, Alert } from 'reactstrap';
 import { addPhoneToCart } from '../../actions/phones';
 
 const PhoneImageGallery = (props) => {
@@ -34,12 +34,31 @@ const PhoneImageGallery = (props) => {
                     </Button>
                 </Link>
             </div>
+            {
+                props.cart && props.cart.map(id => {
+                    if (id === props.phone.id) {
+                        return (
+                            <Alert key={id} color="success" className="mt-5">
+                                <h1 className="alert-heading">Well done!</h1>
+                                <p className="mb-0">
+                                    Product <span className="font-weight-bold">{props.phone.name}</span> was added successfully to your shopping cart.
+                                </p>
+                                <hr />
+                                <p className="mb-0">
+                                    Please click <Link to="/cartdetails" className="alert-link">here</Link> to go to your shopping cart
+                                </p>
+                            </Alert>
+                        )
+                    }
+                })
+            }
         </Col>
     );
 }
 
 const mapStateToProps = (state) => ({
-    phone: state.phone
+    phone: state.phone,
+    cart: state.cart
 });
 
 const mapDispatchToProps = (dispatch) => ({

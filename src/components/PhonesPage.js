@@ -6,7 +6,6 @@ import { fetchPhones } from '../actions/phones';
 import TobBar from './HomePageComponents/TopBar';
 import PhonesRenderer from './HomePageComponents/PhonesRenderer';
 import LoadingPage from './LoadingPage';
-import Sidebar from './Sidebar';
 
 class PhonesPage extends React.Component {
     constructor(props) {

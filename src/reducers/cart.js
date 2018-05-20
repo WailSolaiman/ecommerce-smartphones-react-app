@@ -13,7 +13,9 @@ export default (state = initialState, { type, id }) => {
             }
             else {
                 return state;
-            }
+            };
+        case 'Remove_PHONE_FROM_CART':
+            return _.pull(state, id);
         default :
             return state;
     }

@@ -5,7 +5,7 @@ import { MdGrade, MdLocalOffer } from 'react-icons/lib/md';
 
 const PhoneMainInfos = (props) => {
     return (
-        <Col sm="12" md="7">
+        <Col md="12">
             <div className="d-flex">
                 <p className="mr-5 font-weight-bold">{props.phone.name}</p>
                 <p className="mr-5">({props.phone.storage})</p>

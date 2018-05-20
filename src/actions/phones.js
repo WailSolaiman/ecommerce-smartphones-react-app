@@ -46,6 +46,11 @@ export const addPhoneToCart = id => ({
     id
 });
 
+export const removePhoneFromCart = id => ({
+    type: 'Remove_PHONE_FROM_CART',
+    id
+});
+
 export const filterPhonesAfterName = (searchedText = '') => async dispatch => {
     dispatch({type: 'FILTER_PHONE_AFTER_NAME_START'});
     try {

@@ -3,19 +3,21 @@ import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
 import { addPhoneToCart } from '../../actions/phones';
 
-const Events = ({phone}) => {
+const Events = (props) => {
     return (
-        <div className="d-flex">
-            <Button
-                outline
-                color="primary"
-                className="mr-3"
-                block
-                onClick={() => {
-                    this.props.addPhoneToCart(phone.id);
-                }}>
-                ADD TO CART
-            </Button>
+        <div>
+            <div className="d-flex">
+                <Button
+                    outline
+                    color="primary"
+                    className="mr-3"
+                    block
+                    onClick={() => {
+                        props.addPhoneToCart(props.phone.id);
+                    }}>
+                    ADD TO CART
+                </Button>
+            </div>
         </div>
     );
 }

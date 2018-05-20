@@ -11,7 +11,3 @@ export const getTotalCartPrice = (cart = []) => {
     });
     return total;
 }
-
-// export const filterPhonesAfterTitle = (products, searchedText = '') => {
-//     return products.filter(phone => phone.name.toLowerCase().includes(searchedText.toLowerCase()));
-// }
