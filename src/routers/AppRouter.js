@@ -5,6 +5,7 @@ import DashboardPage from '../components/DashboardPage';
 import PhonesPage from '../components/PhonesPage';
 import PhonePage from '../components/PhonePage';
 import CartPage from '../components/CartPage';
+import WishlistPage from '../components/WishlistPage';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
 import PrivateRoute from './PrivateRoute';
@@ -20,6 +21,7 @@ const AppRouter = () => (
         <PrivateRoute path="/phones" component={PhonesPage} />
         <PrivateRoute path="/phone/:id" component={PhonePage} />
         <PrivateRoute path="/cartdetails" component={CartPage} />
+        <PrivateRoute path="/wishlist" component={WishlistPage} />
         <Route component={NotFoundPage} />
       </Switch>
     </div>

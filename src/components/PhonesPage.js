@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Container } from 'reactstrap';
 import { fetchPhones } from '../actions/phones';
-import TobBar from './HomePageComponents/TopBar';
-import PhonesRenderer from './HomePageComponents/PhonesRenderer';
+import TobBar from './homePageComponents/TopBar';
+import PhonesRenderer from './homePageComponents/PhonesRenderer';
 import LoadingPage from './LoadingPage';
 
 class PhonesPage extends React.Component {
@@ -17,6 +17,7 @@ class PhonesPage extends React.Component {
 
     componentDidMount() {
         this.props.fetchPhones();
+        window.scrollTo(0, 0);
     }
 
     render() {

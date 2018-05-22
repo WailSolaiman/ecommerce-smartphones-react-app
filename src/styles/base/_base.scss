@@ -93,3 +93,32 @@ a:hover {
     margin: 0 auto;
   }
 }
+
+.color-container {
+  border: 1px solid rgba(0,0,0,.1);
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+}
+
+.gallery.image {
+  display: none;
+  margin: 0 auto;
+  &.active {
+    display: block;
+  }
+}
+
+.notActive {
+  display: none !important;
+}
+
+.active-color-container {
+  box-shadow: 0px 0px 0px 2px white inset;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+}

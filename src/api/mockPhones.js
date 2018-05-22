@@ -17,13 +17,13 @@ export default [{
   "memory": "29GB, 16GB and RAM 7 GB",
   "colors": [
     {
-      "color": "Brown"
+      "color": "Dimgray"
     },
     {
       "color": "Blue"
     },
     {
-      "color": "Gold"
+      "color": "Goldenrod"
     }
   ],
   "storage": "64 GB",
@@ -104,7 +104,7 @@ export default [{
       "color": "Blue"
     },
     {
-      "color": "Gold"
+      "color": "Goldenrod"
     }
   ],
   "storage": "16 GB",
@@ -191,7 +191,7 @@ export default [{
       "color": "Blue"
     },
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     }
   ],
   "storage": "64 GB",
@@ -275,7 +275,7 @@ export default [{
       "color": "Blue"
     },
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     }
   ],
   "storage": "64 GB",
@@ -365,10 +365,10 @@ export default [{
       "color": "Grey"
     },
     {
-      "color": "Grey-Light"
+      "color": "Darkgrey"
     },
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     }
   ],
   "storage": "16 GB",
@@ -452,10 +452,10 @@ export default [{
   "memory": "60GB, 60GB and RAM 6 GB",
   "colors": [
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     },
     {
-      "color": "Dark-Grey"
+      "color": "Grey"
     }
   ],
   "storage": "32 GB",
@@ -521,10 +521,10 @@ export default [{
       "color": "Black"
     },
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     },
     {
-      "color": "Blue-Sky"
+      "color": "Lightskyblue"
     }
   ],
   "storage": "32 GB",
@@ -617,7 +617,7 @@ export default [{
   "memory": "65GB, 58GB and RAM 2 GB",
   "colors": [
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     },
     {
       "color": "Black"
@@ -686,7 +686,7 @@ export default [{
   "memory": "61GB, 28GB and RAM 5 GB",
   "colors": [
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     },
     {
       "color": "Blue"
@@ -770,7 +770,7 @@ export default [{
   "memory": "13GB, 34GB and RAM 3 GB",
   "colors": [
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     },
     {
       "color": "Black"
@@ -848,13 +848,13 @@ export default [{
   "memory": "00GB, 55GB and RAM 9 GB",
   "colors": [
     {
-      "color": "Black 1"
+      "color": "Black"
     },
     {
-      "color": "Black 2"
+      "color": "Black"
     },
     {
-      "color": "Gold"
+      "color": "Goldenrod"
     }
   ],
   "storage": "16 GB",
@@ -941,7 +941,7 @@ export default [{
   "memory": "00GB, 21GB and RAM 7 GB",
   "colors": [
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     },
     {
       "color": "Red"
@@ -1178,10 +1178,10 @@ export default [{
       "color": "Black"
     },
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     },
     {
-      "color": "Dark-Red"
+      "color": "Darkred"
     }
   ],
   "storage": "32 GB",
@@ -1253,10 +1253,10 @@ export default [{
   "memory": "46GB, 96GB and RAM 2 GB",
   "colors": [
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     },
     {
-      "color": "Blue-Light"
+      "color": "Dodgerblue"
     }
   ],
   "storage": "16 GB",
@@ -1319,7 +1319,7 @@ export default [{
   "memory": "86GB, 26GB and RAM 6 GB",
   "colors": [
     {
-      "color": "Pink-Light"
+      "color": "Lightpink"
     },
     {
       "color": "Black"
@@ -1394,7 +1394,7 @@ export default [{
       "color": "Red"
     },
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     },
     {
       "color": "Blue"
@@ -1469,7 +1469,7 @@ export default [{
       "color": "Red"
     },
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     },
     {
       "color": "Blue"
@@ -1616,13 +1616,13 @@ export default [{
   "memory": "78GB, 50GB and RAM 7 GB",
   "colors": [
     {
-      "color": "Gold"
+      "color": "Goldenrod"
     },
     {
       "color": "Black"
     },
     {
-      "color": "Blue-Light"
+      "color": "Dodgerblue"
     }
   ],
   "storage": "32 GB",
@@ -1790,10 +1790,10 @@ export default [{
       "color": "Black"
     },
     {
-      "color": "Creme"
+      "color": "Antiquewhite"
     },
     {
-      "color": "Red-Light"
+      "color": "Indianred"
     }
   ],
   "storage": "32 GB",
@@ -1862,7 +1862,7 @@ export default [{
   "memory": "32GB, 23GB and RAM 1 GB",
   "colors": [
     {
-      "color": "Blue-Dark"
+      "color": "Darkblue"
     },
     {
       "color": "Black"

@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Container, Col, Jumbotron } from 'reactstrap';
 import PhoneSpecificationsGeneral from './PhoneSpecificationsGeneral';
 import PhoneSpecificationsDisplay from './PhoneSpecificationsDisplay';
@@ -22,8 +21,4 @@ const PhoneSpecifications = (props) => {
     );
 }
 
-const mapStateToProps = (state) => ({
-    phone: state.phone
-});
-
-export default connect(mapStateToProps)(PhoneSpecifications);
+export default PhoneSpecifications;

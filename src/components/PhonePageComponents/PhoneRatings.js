@@ -1,33 +1,37 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Row, Col, Button, Badge, Table, Progress } from 'reactstrap';
-import { MdGrade, MdInsertChart } from 'react-icons/lib/md';
+import { MdGrade } from 'react-icons/lib/md';
 
 const PhoneRatings = ({phone}) => {
     const productRatings = [
         {
             score: '5',
             color: 'success',
+            value: 85,
             votes: 13.258
         },
         {
             score: '4',
             color: 'success',
+            value: 70,
             votes: 9850
         },
         {
             score: '3',
             color: 'success',
+            value: 55,
             votes: 2074
         },
         {
             score: '2',
             color: 'warning',
+            value: 40,
             votes: 362
         },
         {
             score: '1',
             color: 'danger',
+            value: 15,
             votes: 135
         },
     ];
@@ -50,7 +54,7 @@ const PhoneRatings = ({phone}) => {
                                 phone && productRatings.map(item => (
                                     <tr key={item.score} className="d-flex align-items-center justify-content-between">
                                         <td className="rate d-flex align-items-center">{item.score}<MdGrade size={15} color="black"/></td>
-                                        <td className="chart"><Progress color={item.color} value={80}></Progress></td>
+                                        <td className="chart"><Progress color={item.color} value={item.value}></Progress></td>
                                         <td><p className="mb-0 float-right">{item.votes}</p></td>
                                     </tr>
                                 ))
@@ -58,19 +62,9 @@ const PhoneRatings = ({phone}) => {
                         </tbody>
                     </Table>
                 </Col>
-                <Col>
-                    <Button className="rateProduct d-flex align-items-center" color="secondary">
-                        <MdInsertChart size={25} color="white" className="mt-3"/>
-                        RATE THIS PRODUCT
-                    </Button>
-                </Col>
             </Row>
         </Col>
     );
 }
 
-const mapStateToProps = (state) => ({
-    phone: state.phone
-});
-
-export default connect(mapStateToProps)(PhoneRatings);
+export default PhoneRatings;

@@ -41,14 +41,20 @@ export const fetchPhone = (id) => async dispatch => {
     }
 };
 
-export const addPhoneToCart = id => ({
-    type: 'ADD_PHONE_TO_CART',
-    id
+export const addPhoneToCart = (product) => ({
+  type: 'ADD_PHONE_TO_CART',
+  product
+});
+
+export const editPhoneInCart = (id, update) => ({
+  type: 'EDIT_PHONE_IN_CART',
+  id,
+  update
 });
 
 export const removePhoneFromCart = id => ({
-    type: 'Remove_PHONE_FROM_CART',
-    id
+  type: 'REMOVE_PHONE_FROM_CART',
+  id
 });
 
 export const filterPhonesAfterName = (searchedText = '') => async dispatch => {

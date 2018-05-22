@@ -2,18 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { startLogout } from '../actions/auth';
+import { Container, Row, Col } from 'reactstrap';
 
 export const Header = ({ startLogout }) => (
-  <header className="header">
-    <div className="content-container">
-      <div className="header__content">
-        <Link className="header__title" to="/phones">
-          <h1>Boilerplate</h1>
-        </Link>
-        <button className="button button--link" onClick={startLogout}>Logout</button>
-      </div>
-    </div>
-  </header>
+  <Container fluid className="bg-dark">
+    <Container>
+      <Row>
+        <Col md="12">
+          <div className="w-100 d-flex justify-content-between align-items-center my-3">
+            <Link className="" to="/phones">
+              <h1 className="text-white mb-0">Smartphones Webshop</h1>
+            </Link>
+            <button className="button button--link" onClick={startLogout}>Logout</button>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  </Container>
 );
 
 const mapDispatchToProps = (dispatch) => ({
