@@ -17,7 +17,7 @@ const AddToCartAction = (props) => {
           }
           else {
             let isExistinCart = true;
-            props.onError('');
+            props.onError(undefined);
             props.cart && props.cart.map(item => {
               if (item.id === props.phone.id) {
                 const product = {
@@ -41,14 +41,14 @@ const AddToCartAction = (props) => {
         <MdLocalGroceryStore size={25} color="white" className="mr-3"/>
         ADD TO CART
       </Button>
-      <Link to="/phones">
-        <Button 
-          className="continueShopping d-flex align-items-center"
-          color="info">
+      <Button 
+        className="continueShopping"
+        color="info">
+        <Link to="/phones" className="d-flex align-items-center" style={{width: 'inherit'}}>
           <MdChevronLeft size={25} color="white" className="mr-3"/>
-          <p className="mb-0">SHOPPING</p>
-        </Button>
-      </Link>
+          <p className="text-white mb-0">SHOPPING</p>
+        </Link>
+      </Button>
     </div>
   );
 };

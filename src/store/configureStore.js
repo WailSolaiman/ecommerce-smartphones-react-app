@@ -4,6 +4,7 @@ import authReducer from '../reducers/auth';
 import phonesReducer from '../reducers/phones';
 import phoneReducer from '../reducers/phone';
 import CartReducer from '../reducers/cart';
+import WishlistReducer from '../reducers/wishlist';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -13,7 +14,8 @@ export default () => {
       auth: authReducer,
       phones: phonesReducer,
       phone: phoneReducer,
-      cart: CartReducer
+      cart: CartReducer,
+      wishlist: WishlistReducer
     }),
     composeEnhancers(applyMiddleware(thunk))
   );

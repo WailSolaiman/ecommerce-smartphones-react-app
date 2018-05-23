@@ -10,13 +10,18 @@ class CartPage extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-        hasRendered: true
+        hasRendered: true,
+        isModalOpen: false
       }
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
   }
+
+  onModalOpen = () => this.setState(() => ({ isModalOpen: true }))
+
+  onModalClose = () => this.setState(() => ({ isModalOpen: false }))
 
   render() {
     if (this.state.hasRendered) {
@@ -30,6 +35,9 @@ class CartPage extends React.Component {
         <Row>
           <CartItemsRenderer 
             cart={this.props.cart}
+            isModalOpen={this.state.isModalOpen}
+            onModalOpen={this.onModalOpen}
+            onModalClose={this.onModalClose}
             phones={this.props.phones}
             totalItems={this.props.cartTotalItems}
           />

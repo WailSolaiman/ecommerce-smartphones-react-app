@@ -18,15 +18,11 @@
   background: #888;
 }
 
-.addToCart, .buyNow, .rateProduct, .continueShopping, .placeOrder {
+.addToCart, .buyNow, .rateProduct, .continueShopping, .placeOrder, .closeModal, .addToCartModal, .global-button {
   padding: 1.5rem 4rem;
   border-radius: 0;
-  width: 215px;
+  width: auto;
   height: 60px;
   font-size: 1.5rem;
   font-weight: bold;
 }
-
-// .rateProduct, .continueShopping, .placeOrder {
-//   width: 254px;
-// }

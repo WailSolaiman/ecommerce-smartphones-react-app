@@ -57,6 +57,16 @@ export const removePhoneFromCart = id => ({
   id
 });
 
+export const addPhoneToWishlist = (id) => ({
+  type: 'ADD_PHONE_TO_WISHLIAST',
+  id
+});
+
+export const removePhoneFromWishlist = (id) => ({
+  type: 'REMOVE_PHONE_FROM_WISHLIAST',
+  id
+});
+
 export const filterPhonesAfterName = (searchedText = '') => async dispatch => {
     dispatch({type: 'FILTER_PHONE_AFTER_NAME_START'});
     try {

@@ -8,13 +8,23 @@ class PhoneImageSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: ''
+      error: undefined,
+      isModalOpen: false
     };
   }
 
   onError = (error) => {
-    this.setState(() => ({ error }));
+    if (error === undefined) {
+      this.setState(() => ({ error, isModalOpen: true }));
+    }
+    else {
+      this.setState(() => ({ error, isModalOpen: false }));
+    }
   }
+
+  onModalClose = () => {
+    this.setState(() => ({ isModalOpen: false }));
+  } 
 
   render() {
     return (
@@ -32,6 +42,8 @@ class PhoneImageSelector extends React.Component {
         />
         <AlertRenderer 
           error={this.state.error}
+          isModalOpen={this.state.isModalOpen}
+          onModalClose={this.onModalClose}
           phone={this.props.phone}
           cart={this.props.cart}
         />

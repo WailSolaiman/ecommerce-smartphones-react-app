@@ -1,8 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Modal from 'react-Modal';
+import { MdDeleteForever, MdAddCircleOutline } from 'react-icons/lib/md';
 import { Row, Col, Button } from 'reactstrap';
-import { removePhoneFromCart } from '../../actions/phones';
+import { removePhoneFromCart, addPhoneToWishlist } from '../../actions/phones';
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+}
 
 const CartItemsRenderer = (props) => {
   return (
@@ -53,16 +66,45 @@ const CartItemsRenderer = (props) => {
                           <p className="lead">resolution {phone.resolution}</p>
                           <p className="lead">camera flash {phone.camera_flash}</p>
                         </div>
-                        <Button 
-                          color="primary" 
-                          size="lg" 
-                          className="mr-3"
-                          onClick={
-                            () => props.removePhoneFromCart(phone.id)
-                          }>
-                          REMOVE
-                        </Button>
-                        <Button color="info" size="lg">MOVE TO WISHLIST</Button>
+                        <div className="d-flex align-items-center">
+                          <Button 
+                            color="danger" 
+                            size="lg" 
+                            className="global-button d-flex align-items-center justify-content-center mr-3"
+                            onClick={() => props.removePhoneFromCart(phone.id)}>
+                            <MdDeleteForever size={25} color="white" className="mr-3"/>
+                            <p className="mb-0">REMOVE</p>
+                          </Button>
+                          <Button 
+                            color="primary" 
+                            size="lg"
+                            className="global-button d-flex align-items-center justify-content-center mr-3"
+                            onClick={() => {
+                                props.onModalOpen();
+                                props.addPhoneToWishlist(phone.id);
+                              }
+                            }>
+                            <MdAddCircleOutline size={25} color="white" className="mr-3"/>
+                            <p className="mb-0">ADD TO WISHLIST</p>
+                          </Button>
+                        </div>
+                        <Modal
+                          isOpen={props.isModalOpen}
+                          style={customStyles}
+                          contentLabel="Added To Wishlist"
+                          onRequestClose={props.onModalClose}>
+                          <div className="d-flex flex-column align-items-center">
+                            <p>Product was added successfully to your wishlist.</p>
+                            <Button 
+                              className="global-button mt-3"
+                              color="primary"
+                              size="lg"
+                              block
+                              onClick={props.onModalClose}>
+                              <p className="mb-0">CLOSE</p>
+                            </Button>
+                          </div>
+                        </Modal>
                       </div>
                     </Col>
                   </Row>
@@ -75,11 +117,14 @@ const CartItemsRenderer = (props) => {
       }
     </Col>
   );
-};
+}
 
 const mapDispatchtoProps = dispatch => ({
   removePhoneFromCart(id) {
     dispatch(removePhoneFromCart(id))
+  },
+  addPhoneToWishlist(id) {
+    dispatch(addPhoneToWishlist(id))
   }
 });
 
