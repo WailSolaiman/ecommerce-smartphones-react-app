@@ -72,6 +72,6 @@ const PhoneSpecificationsCamera = ({phone}) => {
             </ul>
         </div>
     );
-}
+};
 
 export default PhoneSpecificationsCamera;

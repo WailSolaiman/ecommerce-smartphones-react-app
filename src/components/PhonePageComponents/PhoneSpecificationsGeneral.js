@@ -48,6 +48,6 @@ const PhoneSpecificationsGeneral = ({phone}) => {
             </ul>
         </div>
     );
-}
+};
 
 export default PhoneSpecificationsGeneral;

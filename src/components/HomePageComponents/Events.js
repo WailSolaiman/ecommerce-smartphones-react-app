@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
-import { addPhoneToCart } from '../../actions/phones';
+import { addPhoneToCart } from '../../actions/cart';
 
 const Events = (props) => {
     return (
@@ -20,7 +20,7 @@ const Events = (props) => {
             </div>
         </div>
     );
-}
+};
 
 const mapDispatchToProps = (dispatch) => ({
     addPhoneToCart(id) {

@@ -20,11 +20,11 @@ class PhoneImageSelector extends React.Component {
     else {
       this.setState(() => ({ error, isModalOpen: false }));
     }
-  }
+  };
 
   onModalClose = () => {
     this.setState(() => ({ isModalOpen: false }));
-  } 
+  };
 
   render() {
     return (

@@ -1,13 +1,13 @@
-import _ from 'lodash';
-
-const intialState = [];
-
-export default (state = intialState, { type, payload }) => {
+const initialState = [];
+export default (state = initialState, { type, payload }) => {
     switch(type) {
         case 'FETCH_PHONES_SUCCESS':
-            return _.merge([], state, payload);
-        case 'FILTER_PHONE_AFTER_NAME_SUCCESS':
-            return payload
+            return [
+                ...state,
+                payload
+            ];
+        case 'SET_PHONES_FROM_DATABASE':
+            return payload;
         default:
             return state;
     }

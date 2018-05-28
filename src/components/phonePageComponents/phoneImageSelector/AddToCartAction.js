@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { MdLocalGroceryStore, MdChevronLeft } from 'react-icons/lib/md';
-import { addPhoneToCart, editPhoneInCart } from '../../../actions/phones';
+import { startAddPhoneToCart, startEditPhoneInCart } from '../../../actions/cart';
 
 const AddToCartAction = (props) => {
   return (
@@ -16,25 +16,26 @@ const AddToCartAction = (props) => {
             props.onError('please select product color and amount.');
           }
           else {
-            let isExistinCart = true;
+            let isExistInCart = true;
             props.onError(undefined);
             props.cart && props.cart.map(item => {
               if (item.id === props.phone.id) {
                 const product = {
+                  id: props.phone.id,
                   color: props.selectedColor,
                   quantity: props.selectedQuantity
-                }
-                props.editPhoneInCart(item.id, product);
-                isExistinCart = false;
+                };
+                props.startEditPhoneInCart(item.id, product);
+                  isExistInCart = false;
               }
             });
-            if(isExistinCart) {
+            if(isExistInCart) {
               const product = {
                 id: props.phone.id,
                 color: props.selectedColor,
                 quantity: props.selectedQuantity
-              }
-              props.addPhoneToCart(product);
+              };
+              props.startAddPhoneToCart(product);
             }
           }
         }}>
@@ -54,11 +55,11 @@ const AddToCartAction = (props) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addPhoneToCart(product) {
-    dispatch(addPhoneToCart(product))
+    startAddPhoneToCart(product) {
+    dispatch(startAddPhoneToCart(product))
   },
-  editPhoneInCart(id, update) {
-    dispatch(editPhoneInCart(id, update))
+    startEditPhoneInCart(id, update) {
+    dispatch(startEditPhoneInCart(id, update))
   }
 });
 

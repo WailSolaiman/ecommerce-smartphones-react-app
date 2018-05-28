@@ -19,6 +19,6 @@ const PhoneSpecifications = (props) => {
             </div>
         </Col>
     );
-}
+};
 
 export default PhoneSpecifications;

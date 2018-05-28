@@ -36,6 +36,6 @@ const PhoneSpecificationsDisplay = ({phone}) => {
             </ul>
         </div>
     );
-}
+};
 
 export default PhoneSpecificationsDisplay;

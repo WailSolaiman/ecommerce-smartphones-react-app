@@ -1,6 +1,4 @@
-import phones from '../api/mockPhones';
-
-export const calculatePriceWithAmount = (cart = []) => {
+export const calculatePriceWithAmount = (cart = [], phones = []) => {
   let totalPrice = 0;
   cart.map(product => {
     phones.map(phone => {
@@ -10,9 +8,8 @@ export const calculatePriceWithAmount = (cart = []) => {
     });
   });
   return totalPrice;
-}
-
-export const calculateDiscountWithAmount = (cart = []) => {
+};
+export const calculateDiscountWithAmount = (cart = [], phones = []) => {
   let totalDiscount = 0;
   cart.map(product => {
     phones.map(phone => {
@@ -22,16 +19,4 @@ export const calculateDiscountWithAmount = (cart = []) => {
     });
   });
   return totalDiscount.toFixed(2);
-}
-
-export const getTotalAmountInCart = (cart = []) => {
-  let totalAmount = 0;
-  cart.map(product => {
-    phones.map(phone => {
-      if (product.id === phone.id) {
-        totalAmount = totalAmount + parseInt(product.quantity);
-      }
-    });
-  });
-  return totalAmount;
-}
+};

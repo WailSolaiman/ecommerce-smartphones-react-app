@@ -18,6 +18,6 @@ const Highlights = (props) => {
       </Row>
     </Col>
   );
-}
+};
 
 export default Highlights;

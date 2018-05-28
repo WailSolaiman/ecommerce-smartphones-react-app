@@ -44,6 +44,6 @@ const PhonesMainContent = ({phone}) => {
             </div>
         </Link>
     );
-}
+};
 
 export default PhonesMainContent;

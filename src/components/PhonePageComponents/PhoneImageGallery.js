@@ -27,6 +27,6 @@ const PhoneImageGallery = (props) => {
       </Row>
     </Col>
   );
-}
+};
 
 export default PhoneImageGallery;

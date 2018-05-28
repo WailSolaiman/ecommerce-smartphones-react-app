@@ -19,7 +19,7 @@ class ImagesRenderer extends React.Component {
       .eq(number)
       .addClass('active');
     return 'active';
-  }
+  };
 
   render() {
     return (

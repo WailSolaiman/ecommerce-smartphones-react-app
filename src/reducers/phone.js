@@ -1,11 +1,11 @@
-import _ from 'lodash';
-
-const intialState = {};
-
-export default (state = intialState, { type, payload }) => {
+const initialState = {};
+export default (state = initialState, { type, id, phone }) => {
     switch(type) {
         case 'FETCH_PHONE_BY_ID_SUCCESS':
-            return _.assign({}, state, ...payload);
+            return {
+                id,
+                ...phone
+            };
         default:
             return state;
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Alert } from 'reactstrap';
-import Modal from 'react-Modal';
+import Modal from 'react-modal';
 import { MdLocalGroceryStore, MdChevronLeft } from 'react-icons/lib/md';
 
 const customStyles = {
@@ -60,6 +60,6 @@ const AlertRenderer = (props) => {
       }
     </div>
   );
-}
+};
 
 export default AlertRenderer;

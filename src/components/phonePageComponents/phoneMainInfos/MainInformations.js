@@ -36,6 +36,6 @@ const MainInformations = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default MainInformations;

@@ -19,9 +19,9 @@ class CartPage extends React.Component {
     window.scrollTo(0, 0);
   }
 
-  onModalOpen = () => this.setState(() => ({ isModalOpen: true }))
+  onModalOpen = () => this.setState(() => ({ isModalOpen: true }));
 
-  onModalClose = () => this.setState(() => ({ isModalOpen: false }))
+  onModalClose = () => this.setState(() => ({ isModalOpen: false }));
 
   render() {
     if (this.state.hasRendered) {
@@ -30,28 +30,26 @@ class CartPage extends React.Component {
       }, 1500);
       return <LoadingPage />
     }
-    return (
-      <Container className="my-5">
-        <Row>
-          <CartItemsRenderer 
-            cart={this.props.cart}
-            isModalOpen={this.state.isModalOpen}
-            onModalOpen={this.onModalOpen}
-            onModalClose={this.onModalClose}
-            phones={this.props.phones}
-            totalItems={this.props.cartTotalItems}
-          />
-          <PriceDetailsComponent 
-            cart={this.props.cart}
-            phones={this.props.phones}
-            totalItems={this.props.cartTotalItems}
-          />
-        </Row>
-        <Row>  
-          <ButtonsGroup totalItems={this.props.cartTotalItems} />
-        </Row>
-      </Container>
-    );
+      return <Container className="my-5">
+          <Row>
+              <CartItemsRenderer
+                  cart={this.props.cart}
+                  isModalOpen={this.state.isModalOpen}
+                  onModalOpen={this.onModalOpen}
+                  onModalClose={this.onModalClose}
+                  phones={this.props.phones}
+                  totalItems={this.props.cartTotalItems}
+              />
+              <PriceDetailsComponent
+                  cart={this.props.cart}
+                  phones={this.props.phones}
+                  cartTotalItems={this.props.cartTotalItems}
+              />
+          </Row>
+          <Row>
+              <ButtonsGroup totalItems={this.props.cartTotalItems}/>
+          </Row>
+      </Container>;
   }
 }
 

@@ -16,6 +16,6 @@ const Storage = (props) => {
       </Row>
     </Col>
   );
-}
+};
 
 export default Storage;

@@ -31,6 +31,6 @@ const Amounts = (props) => {
       </Row>
     </Col>
   );
-}
+};
 
 export default Amounts;

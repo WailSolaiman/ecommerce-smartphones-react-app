@@ -1,24 +1,14 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import authReducer from '../reducers/auth';
-import phonesReducer from '../reducers/phones';
-import phoneReducer from '../reducers/phone';
-import CartReducer from '../reducers/cart';
-import WishlistReducer from '../reducers/wishlist';
-
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage';
+import rootReducer from '../reducers';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-export default () => {
-  const store = createStore(
-    combineReducers({
-      auth: authReducer,
-      phones: phonesReducer,
-      phone: phoneReducer,
-      cart: CartReducer,
-      wishlist: WishlistReducer
-    }),
-    composeEnhancers(applyMiddleware(thunk))
-  );
-
-  return store;
+const persistConfig = {
+    key: 'root',
+    storage,
 };
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+const store = createStore(persistedReducer, composeEnhancers(applyMiddleware(thunk)));
+const persistor = persistStore(store);
+export { persistor, store };

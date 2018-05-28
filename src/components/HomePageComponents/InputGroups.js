@@ -3,22 +3,27 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import MdAddShoppingCart from 'react-icons/lib/md/add-shopping-cart';
 import { Row, Col, InputGroup, InputGroupText, InputGroupAddon, Input, Badge } from 'reactstrap';
-import { filterPhonesAfterName } from '../../actions/phones';
 
 class InputGroups extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             text: '',
+            phones: this.props.phones
         };
+    }
+
+    componentDidMount() {
+        this.props.onLoadPhones(this.state.phones);
     }
 
     onChangeSearchedText = (event) => {
         event.preventDefault();
         const text = event.target.value;
         this.setState(() => ({ text }));
-        this.props.filterPhonesAfterName(text);
-    }
+        const filteredPhones = this.state.phones.filter(phone => phone.name.toLowerCase().includes(text.toLowerCase()));
+        this.props.onLoadPhones(filteredPhones);
+    };
 
     render() {
         return (
@@ -57,14 +62,9 @@ class InputGroups extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
+    phones: state.phones,
     cart: state.cart,
     auth: state.auth
 });
 
-const mapDispatchToProps = (dispatch) => ({
-    filterPhonesAfterName(text) {
-        dispatch(filterPhonesAfterName(text))
-    }
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(InputGroups);
+export default connect(mapStateToProps)(InputGroups);

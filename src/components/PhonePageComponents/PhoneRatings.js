@@ -65,6 +65,6 @@ const PhoneRatings = ({phone}) => {
             </Row>
         </Col>
     );
-}
+};
 
 export default PhoneRatings;

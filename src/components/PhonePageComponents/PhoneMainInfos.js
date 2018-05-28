@@ -19,6 +19,6 @@ const PhoneMainInfos = (props) => {
       <p className="mb-5 lead">{props.phone.description}</p>
     </Col>
   );
-}
+};
 
 export default PhoneMainInfos;

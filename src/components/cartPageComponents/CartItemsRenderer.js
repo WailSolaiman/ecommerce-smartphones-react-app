@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Modal from 'react-Modal';
+import Modal from 'react-modal';
 import { MdDeleteForever, MdAddCircleOutline } from 'react-icons/lib/md';
 import { Row, Col, Button } from 'reactstrap';
-import { removePhoneFromCart, addPhoneToWishlist } from '../../actions/phones';
+import { startRemovePhoneFromCart } from '../../actions/cart';
+import { startAddPhoneToWishlist } from '../../actions/wishlist';
 
 const customStyles = {
   content : {
@@ -15,7 +16,7 @@ const customStyles = {
     marginRight           : '-50%',
     transform             : 'translate(-50%, -50%)'
   }
-}
+};
 
 const CartItemsRenderer = (props) => {
   return (
@@ -71,7 +72,7 @@ const CartItemsRenderer = (props) => {
                             color="danger" 
                             size="lg" 
                             className="global-button d-flex align-items-center justify-content-center mr-3"
-                            onClick={() => props.removePhoneFromCart(phone.id)}>
+                            onClick={() => props.startRemovePhoneFromCart(phone.id)}>
                             <MdDeleteForever size={25} color="white" className="mr-3"/>
                             <p className="mb-0">REMOVE</p>
                           </Button>
@@ -81,7 +82,7 @@ const CartItemsRenderer = (props) => {
                             className="global-button d-flex align-items-center justify-content-center mr-3"
                             onClick={() => {
                                 props.onModalOpen();
-                                props.addPhoneToWishlist(phone.id);
+                                props.startAddPhoneToWishlist(phone.id);
                               }
                             }>
                             <MdAddCircleOutline size={25} color="white" className="mr-3"/>
@@ -117,14 +118,14 @@ const CartItemsRenderer = (props) => {
       }
     </Col>
   );
-}
+};
 
 const mapDispatchtoProps = dispatch => ({
-  removePhoneFromCart(id) {
-    dispatch(removePhoneFromCart(id))
+    startRemovePhoneFromCart(id) {
+    dispatch(startRemovePhoneFromCart(id))
   },
-  addPhoneToWishlist(id) {
-    dispatch(addPhoneToWishlist(id))
+    startAddPhoneToWishlist(id) {
+    dispatch(startAddPhoneToWishlist(id))
   }
 });
 

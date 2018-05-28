@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { Container } from 'reactstrap';
-import { fetchPhones } from '../actions/phones';
-import TobBar from './homePageComponents/TopBar';
+import { saveToDB, fetchPhonesFromDB, fetchPhones } from '../actions/phones';
+import { startLoadPhoneToCart } from '../actions/cart';
+import { startLoadPhoneToWishlist } from '../actions/wishlist';
+import InputGroups from './homePageComponents/InputGroups';
 import PhonesRenderer from './homePageComponents/PhonesRenderer';
 import LoadingPage from './LoadingPage';
 
@@ -11,14 +12,21 @@ class PhonesPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            hasRendered: true
+            hasRendered: true,
+            phones: []
         };
     }
 
     componentDidMount() {
-        this.props.fetchPhones();
+        this.props.fetchPhonesFromDB();
+        this.props.startLoadPhoneToCart();
+        this.props.startLoadPhoneToWishlist();
         window.scrollTo(0, 0);
     }
+
+    onLoadPhones = (phones) => {
+        this.setState(() => ({ phones }));
+    };
 
     render() {
         if (this.state.hasRendered) {
@@ -26,19 +34,29 @@ class PhonesPage extends React.Component {
                 this.setState(() => ({ hasRendered: false }))
             }, 1000);
             return <LoadingPage />
-        }   
-        return (
-            <Container className="my-5">    
-                <TobBar />
-                <PhonesRenderer />
-            </Container>
-        );
+        }
+        return <Container className="my-5">
+            <InputGroups onLoadPhones={this.onLoadPhones} />
+            <PhonesRenderer phones={this.state.phones} />
+        </Container>;
     }
 }
 
 const mapDispatchToProps = (dispatch) => ({
+    saveToDB() {
+        dispatch(saveToDB())
+    },
+    fetchPhonesFromDB() {
+        dispatch(fetchPhonesFromDB())
+    },
     fetchPhones() {
         dispatch(fetchPhones())
+    },
+    startLoadPhoneToCart() {
+        dispatch(startLoadPhoneToCart())
+    },
+    startLoadPhoneToWishlist() {
+        dispatch(startLoadPhoneToWishlist())
     }
 });
 

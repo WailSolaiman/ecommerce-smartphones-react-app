@@ -26,6 +26,6 @@ const ButtonsGroup = (props) => {
       </div>
     </Col>
   );
-}
+};
 
 export default ButtonsGroup;

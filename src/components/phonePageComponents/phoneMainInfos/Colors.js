@@ -36,6 +36,6 @@ const Colors = (props) => {
       </Row>
     </Col>
   );
-}
+};
 
 export default Colors;

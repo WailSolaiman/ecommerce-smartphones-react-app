@@ -2,8 +2,7 @@ import React from 'react';
 import { Col } from 'reactstrap';
 import { 
   calculatePriceWithAmount,
-  calculateDiscountWithAmount,
-  getTotalAmountInCart
+  calculateDiscountWithAmount
 } from '../../selectors/phones';
 
 const PriceDetailsComponent = (props) => {
@@ -12,7 +11,7 @@ const PriceDetailsComponent = (props) => {
       <div className="d-flex justify-content-between">
         <p className="font-weight-bold">PRICE DETAILS</p>
       </div>
-      <h3 className="text-success border-bottom mb-3 pb-5">({getTotalAmountInCart(props.cart)}) Product(s)</h3>
+      <h3 className="text-success border-bottom mb-3 pb-5">({props.cartTotalItems}) Product(s)</h3>
       <div className="border-bottom mb-3">
         {
           props.cart && props.cart.map(product => (
@@ -38,7 +37,7 @@ const PriceDetailsComponent = (props) => {
         <div className="d-flex justify-content-between mb-3">
           <p className="font-weight-bold">Amount Payable</p>
           <p className="font-weight-bold">
-            {calculatePriceWithAmount(props.cart)}€
+            {calculatePriceWithAmount(props.cart, props.phones)}€
           </p>
         </div>
       </div>
@@ -46,12 +45,12 @@ const PriceDetailsComponent = (props) => {
         <p className="text-success">Total Savings on this order(s)</p>
         <p className="text-success">
           <span className="font-weight-bold display-4">
-            {calculateDiscountWithAmount(props.cart)}€
+            {calculateDiscountWithAmount(props.cart, props.phones)}€
           </span>
         </p>
       </div>
     </Col>
   );
-}
+};
 
 export default PriceDetailsComponent;
