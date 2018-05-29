@@ -34,6 +34,7 @@ class CartPage extends React.Component {
           <Row>
               <CartItemsRenderer
                   cart={this.props.cart}
+                  wishlist={this.props.wishlist}
                   isModalOpen={this.state.isModalOpen}
                   onModalOpen={this.onModalOpen}
                   onModalClose={this.onModalClose}
@@ -47,16 +48,21 @@ class CartPage extends React.Component {
               />
           </Row>
           <Row>
-              <ButtonsGroup totalItems={this.props.cartTotalItems}/>
+              <ButtonsGroup
+                  cart={this.props.cart}
+                  phones={this.props.phones}
+                  totalItems={this.props.cartTotalItems}
+              />
           </Row>
       </Container>;
   }
 }
 
 const mapStateToProps = state => ({
-  phones: state.phones,
-  cart: state.cart,
-  cartTotalItems: state.cart.length
+    phones: state.phones,
+    cart: state.cart,
+    wishlist: state.wishlist,
+    cartTotalItems: state.cart.length
 });
 
 export default connect(mapStateToProps)(CartPage);

@@ -10,7 +10,8 @@ const AddToCartAction = (props) => {
     <div className="mt-3 d-flex justify-content-between">
       <Button 
         className="addToCart d-flex align-items-center" 
-        color="success"
+        color={props.cart.some(item => item.id === props.phone.id)? 'secondary' : 'success'}
+        disabled={props.cart.some(item => item.id === props.phone.id)}
         onClick={() => {
           if (props.selectedColor === '' || props.selectedQuantity === 0) {
             props.onError('please select product color and amount.');
@@ -39,8 +40,8 @@ const AddToCartAction = (props) => {
             }
           }
         }}>
-        <MdLocalGroceryStore size={25} color="white" className="mr-3"/>
-        ADD TO CART
+            <MdLocalGroceryStore size={25} color="white" className="mr-3"/>
+            <p className="mb-0">{props.cart.some(item => item.id === props.phone.id)? 'ADDED TO CART' : 'ADD TO CART'}</p>
       </Button>
       <Button 
         className="continueShopping"

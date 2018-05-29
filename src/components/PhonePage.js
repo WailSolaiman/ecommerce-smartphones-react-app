@@ -73,8 +73,8 @@ class PhonePage extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  phone: state.phone,
-  cart: state.cart
+    phone: state.phone,
+    cart: state.cart
 });
 
 const mapDispatchToProps = (dispatch) => ({

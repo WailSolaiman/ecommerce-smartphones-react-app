@@ -77,8 +77,9 @@ const CartItemsRenderer = (props) => {
                             <p className="mb-0">REMOVE</p>
                           </Button>
                           <Button 
-                            color="primary" 
+                            color={props.wishlist.some(item => item.id === phone.id)? 'secondary' : 'primary'}
                             size="lg"
+                            disabled={props.wishlist.some(item => item.id === phone.id)}
                             className="global-button d-flex align-items-center justify-content-center mr-3"
                             onClick={() => {
                                 props.onModalOpen();
@@ -86,7 +87,7 @@ const CartItemsRenderer = (props) => {
                               }
                             }>
                             <MdAddCircleOutline size={25} color="white" className="mr-3"/>
-                            <p className="mb-0">ADD TO WISHLIST</p>
+                            <p className="mb-0">{props.wishlist.some(item => item.id === phone.id)? 'ADDED TO WISHLIST' : 'ADD TO WISHLIST'}</p>
                           </Button>
                         </div>
                         <Modal

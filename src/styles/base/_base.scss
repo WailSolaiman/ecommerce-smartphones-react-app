@@ -126,3 +126,14 @@ a:hover {
 .container.wishlist {
   min-height: 500px;
 }
+
+ul.placeOrderModal {
+  li {
+    h3:first-child {
+      width: 200px;
+    }
+    p {
+      width: 25px;
+    }
+  }
+}
